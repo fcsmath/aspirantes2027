@@ -54,11 +54,7 @@
     margin-bottom: 1rem;
   }
 
-  .emblem-ring img {
-    width: 220px;
-    height: 220px;
-    object-fit: contain;
-  }
+  .emblem-ring img { width: 220px; height: 220px; object-fit: contain; }
 
   .gate-emblem h1 {
     font-family: 'Bebas Neue', sans-serif;
@@ -157,18 +153,12 @@
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     padding-bottom: 1.5rem;
     border-bottom: 0.5px solid rgba(201,168,76,0.2);
   }
 
-  .portal-logo {
-    width: 56px; height: 56px;
-    border-radius: 50%;
-    overflow: hidden;
-    flex-shrink: 0;
-  }
-
+  .portal-logo { width: 56px; height: 56px; border-radius: 50%; overflow: hidden; flex-shrink: 0; }
   .portal-logo img { width: 100%; height: 100%; object-fit: contain; }
 
   .portal-header-text h2 {
@@ -202,13 +192,417 @@
     white-space: nowrap;
   }
 
-  /* ── ABAS ── */
-  .tabs-nav {
+  /* ── ASPIRANTÔMETRO ── */
+  .aspirantometro {
+    background: rgba(201,168,76,0.06);
+    border: 0.5px solid rgba(201,168,76,0.25);
+    border-radius: 12px;
+    padding: 1.1rem 1.5rem;
+    margin-bottom: 1rem;
     display: flex;
+    align-items: center;
+    gap: 1.5rem;
     flex-wrap: wrap;
-    gap: 8px;
+  }
+
+  .aspirantometro-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: var(--dourado);
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+
+  .aspirantometro-date { font-size: 11px; color: rgba(245,240,232,0.3); letter-spacing: 0.5px; }
+  .countdown-blocks { display: flex; gap: 8px; margin-left: auto; }
+
+  .countdown-block {
+    text-align: center;
+    background: rgba(201,168,76,0.08);
+    border: 0.5px solid rgba(201,168,76,0.2);
+    border-radius: 8px;
+    padding: 8px 12px;
+    min-width: 52px;
+  }
+
+  .countdown-block .num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    color: var(--dourado);
+    line-height: 1;
+    display: block;
+    letter-spacing: 2px;
+  }
+
+  .countdown-block .lbl {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.3);
+    display: block;
+    margin-top: 3px;
+  }
+
+  /* ── QUADRO DE TRABALHO ── */
+  .quadro-card {
+    background: rgba(250,250,248,0.04);
+    border: 0.5px solid rgba(201,168,76,0.2);
+    border-radius: 12px;
+    padding: 1.1rem 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .quadro-info { flex: 1; }
+
+  .quadro-titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: var(--dourado);
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+
+  .quadro-nome { font-size: 12px; color: rgba(245,240,232,0.45); letter-spacing: 0.5px; }
+
+  .btn-ver-quadro {
+    background: transparent;
+    border: 0.5px solid var(--dourado);
+    color: var(--dourado);
+    border-radius: 7px;
+    padding: 8px 18px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+    transition: background 0.2s, color 0.2s;
+    border: 0.5px solid var(--dourado);
+  }
+
+  .btn-ver-quadro:hover { background: var(--dourado); color: var(--verde); }
+
+  /* ── MODAL QUADRO ── */
+  .modal-quadro-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(5,12,8,0.85);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    backdrop-filter: blur(6px);
+  }
+
+  .modal-quadro-overlay.open { display: flex; }
+
+  .modal-quadro-box {
+    background: #0e1f15;
+    border: 0.5px solid rgba(201,168,76,0.3);
+    border-radius: 14px;
+    padding: 1.25rem;
+    width: 100%;
+    max-width: 720px;
+    animation: fadeUp 0.25s ease both;
+  }
+
+  .modal-quadro-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .modal-quadro-titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+    letter-spacing: 3px;
+    color: var(--dourado);
+  }
+
+  .btn-fechar-quadro {
+    background: transparent;
+    border: 0.5px solid rgba(245,240,232,0.2);
+    color: rgba(245,240,232,0.5);
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.2s;
+  }
+
+  .btn-fechar-quadro:hover { border-color: rgba(245,240,232,0.4); color: rgba(245,240,232,0.8); }
+
+  .quadro-iframe-wrap {
+    position: relative;
+    width: 100%;
+    padding-bottom: 75%;
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(0,0,0,0.3);
+  }
+
+  .quadro-iframe-wrap iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+  }
+
+  /* ── MURAL DE AVISOS ── */
+  .mural-card {
+    background: rgba(250,250,248,0.04);
+    border: 0.5px solid rgba(201,168,76,0.2);
+    border-radius: 12px;
+    padding: 1.1rem 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .mural-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.9rem;
+  }
+
+  .mural-titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: var(--dourado);
+    text-transform: uppercase;
+  }
+
+  .btn-novo-aviso {
+    background: transparent;
+    border: 0.5px solid rgba(201,168,76,0.4);
+    color: rgba(201,168,76,0.7);
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.2s;
+  }
+
+  .btn-novo-aviso:hover { border-color: var(--dourado); color: var(--dourado); }
+
+  .avisos-lista { display: flex; flex-direction: column; gap: 7px; }
+
+  .aviso-item {
+    background: rgba(201,168,76,0.05);
+    border-left: 2px solid rgba(201,168,76,0.4);
+    border-radius: 0 6px 6px 0;
+    padding: 8px 12px;
+    font-size: 13px;
+    color: rgba(245,240,232,0.8);
+    line-height: 1.5;
+    animation: fadeUp 0.3s ease both;
+  }
+
+  .avisos-vazio {
+    font-size: 12px;
+    color: rgba(245,240,232,0.25);
+    letter-spacing: 0.5px;
+    text-align: center;
+    padding: 8px 0;
+  }
+
+  /* ── ANIVERSARIANTES ── */
+  .aniversariantes-card {
+    background: rgba(250,250,248,0.04);
+    border: 0.5px solid rgba(201,168,76,0.2);
+    border-radius: 12px;
+    padding: 1.1rem 1.5rem;
     margin-bottom: 1.5rem;
   }
+
+  .aniversariantes-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.9rem;
+  }
+
+  .aniversariantes-titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: var(--dourado);
+    text-transform: uppercase;
+  }
+
+  .aniversariantes-mes {
+    font-size: 11px;
+    color: rgba(245,240,232,0.3);
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+  }
+
+  .aniversariantes-lista { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .aniversariante-item {
+    background: rgba(201,168,76,0.07);
+    border: 0.5px solid rgba(201,168,76,0.2);
+    border-radius: 8px;
+    padding: 7px 14px;
+    font-size: 13px;
+    color: rgba(245,240,232,0.8);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    animation: fadeUp 0.3s ease both;
+  }
+
+  .aniversariante-item.hoje { border-color: var(--dourado); background: rgba(201,168,76,0.15); }
+  .aniversariante-item.hoje .aniv-nome { color: var(--dourado); font-weight: 500; }
+
+  .aniv-dia {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    color: var(--dourado);
+    letter-spacing: 1px;
+    min-width: 24px;
+    text-align: center;
+  }
+
+  .aniversariantes-vazio {
+    font-size: 12px;
+    color: rgba(245,240,232,0.25);
+    letter-spacing: 0.5px;
+    text-align: center;
+    padding: 8px 0;
+  }
+
+  /* ── MODAL AVISOS ── */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(5,12,8,0.75);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    backdrop-filter: blur(4px);
+  }
+
+  .modal-overlay.open { display: flex; }
+
+  .modal-box {
+    background: #0e1f15;
+    border: 0.5px solid rgba(201,168,76,0.3);
+    border-radius: 14px;
+    padding: 1.75rem;
+    width: 100%;
+    max-width: 420px;
+    animation: fadeUp 0.25s ease both;
+  }
+
+  .modal-titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    letter-spacing: 3px;
+    color: var(--dourado);
+    margin-bottom: 1.25rem;
+  }
+
+  .modal-label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(201,168,76,0.6);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  .modal-input {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 0.5px solid rgba(201,168,76,0.3);
+    border-radius: 8px;
+    padding: 11px 14px;
+    font-size: 14px;
+    color: var(--creme);
+    outline: none;
+    font-family: 'DM Sans', sans-serif;
+    transition: border-color 0.2s;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  .modal-input:focus { border-color: var(--dourado); }
+  .modal-btns { display: flex; gap: 8px; margin-top: 4px; }
+
+  .btn-modal-cancel {
+    flex: 1;
+    background: transparent;
+    border: 0.5px solid rgba(245,240,232,0.15);
+    color: rgba(245,240,232,0.4);
+    border-radius: 8px;
+    padding: 11px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.2s;
+  }
+
+  .btn-modal-cancel:hover { border-color: rgba(245,240,232,0.3); color: rgba(245,240,232,0.6); }
+
+  .btn-modal-confirm {
+    flex: 2;
+    background: var(--dourado);
+    color: var(--verde);
+    border: none;
+    border-radius: 8px;
+    padding: 11px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: background 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .btn-modal-confirm:hover { background: var(--dourado-claro); }
+
+  .modal-err {
+    font-size: 11px;
+    color: #e87070;
+    margin-top: -8px;
+    margin-bottom: 10px;
+    min-height: 16px;
+  }
+
+  /* ── ABAS ── */
+  .tabs-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.5rem; }
 
   .tab-btn {
     background: rgba(255,255,255,0.05);
@@ -223,16 +617,27 @@
     font-family: 'DM Sans', sans-serif;
     transition: all 0.2s;
     white-space: nowrap;
+    position: relative;
   }
 
   .tab-btn:hover { border-color: rgba(201,168,76,0.5); color: var(--creme); }
+  .tab-btn.active { background: rgba(201,168,76,0.15); border-color: var(--dourado); color: var(--dourado); }
 
-  .tab-btn.active {
-    background: rgba(201,168,76,0.15);
-    border-color: var(--dourado);
+  .tab-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(201,168,76,0.2);
     color: var(--dourado);
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 1px 6px;
+    margin-left: 6px;
+    min-width: 18px;
   }
 
+  .tab-btn.active .tab-count { background: rgba(201,168,76,0.3); }
   .tab-panel { display: none; }
   .tab-panel.active { display: block; }
 
@@ -271,19 +676,8 @@
   }
 
   .file-info { flex: 1; }
-
-  .file-info .file-name {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--creme);
-    display: block;
-    margin-bottom: 2px;
-  }
-
-  .file-info .file-meta {
-    font-size: 11px;
-    color: rgba(245,240,232,0.35);
-  }
+  .file-info .file-name { font-size: 14px; font-weight: 500; color: var(--creme); display: block; margin-bottom: 2px; }
+  .file-info .file-meta { font-size: 11px; color: rgba(245,240,232,0.35); }
 
   .btn-download {
     background: transparent;
@@ -305,26 +699,67 @@
 
   .btn-download:hover { background: var(--dourado); color: var(--verde); }
 
+  .loading-state { text-align: center; padding: 3rem 1rem; color: rgba(245,240,232,0.4); }
+
+  .loading-spinner {
+    width: 28px; height: 28px;
+    border: 2px solid rgba(201,168,76,0.2);
+    border-top-color: var(--dourado);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 12px;
+  }
+
+  .loading-state p { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; }
+  .error-state { text-align: center; padding: 2rem 1rem; color: #e87070; font-size: 13px; }
+  .empty-state { text-align: center; padding: 2rem 1rem; color: rgba(245,240,232,0.3); font-size: 13px; }
+
   .portal-footer {
     margin-top: 2rem;
     padding-top: 1.25rem;
     border-top: 0.5px solid rgba(201,168,76,0.1);
-    text-align: center;
-    font-size: 11px;
-    color: rgba(245,240,232,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .footer-text { font-size: 11px; color: rgba(245,240,232,0.25); letter-spacing: 1px; text-transform: uppercase; }
+
+  .btn-refresh {
+    background: transparent;
+    border: 0.5px solid rgba(201,168,76,0.3);
+    color: rgba(201,168,76,0.5);
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 10px;
+    font-weight: 500;
     letter-spacing: 1px;
     text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.2s;
   }
+
+  .btn-refresh:hover { border-color: var(--dourado); color: var(--dourado); }
+  .btn-refresh.spinning svg { animation: spin 0.8s linear infinite; }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(16px); }
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 560px) {
     .access-badge { display: none; }
     .btn-download { padding: 6px 10px; font-size: 10px; }
     .tab-btn { font-size: 11px; padding: 6px 12px; }
+    .countdown-blocks { margin-left: 0; }
+    .countdown-block .num { font-size: 22px; }
+    .countdown-block { min-width: 44px; padding: 6px 8px; }
+    .quadro-iframe-wrap { padding-bottom: 120%; }
   }
 </style>
 </head>
@@ -349,6 +784,52 @@
   </div>
 </div>
 
+<!-- MODAL QUADRO -->
+<div class="modal-quadro-overlay" id="modal-quadro">
+  <div class="modal-quadro-box">
+    <div class="modal-quadro-header">
+      <div class="modal-quadro-titulo">📋 Quadro de Trabalho</div>
+      <button class="btn-fechar-quadro" onclick="fecharQuadro()">✕ Fechar</button>
+    </div>
+    <div class="quadro-iframe-wrap">
+      <iframe id="quadro-iframe" src="" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL NOVO AVISO -->
+<div class="modal-overlay" id="modal-aviso">
+  <div class="modal-box">
+    <div id="modal-step-1">
+      <div class="modal-titulo">📣 Novo Aviso</div>
+      <label class="modal-label">Senha de moderação</label>
+      <input type="password" class="modal-input" id="modal-pw" placeholder="Digite a senha" autocomplete="off" />
+      <div class="modal-err" id="modal-pw-err"></div>
+      <div class="modal-btns">
+        <button class="btn-modal-cancel" onclick="fecharModal()">Cancelar</button>
+        <button class="btn-modal-confirm" onclick="verificarSenhaAviso()">Continuar</button>
+      </div>
+    </div>
+    <div id="modal-step-2" style="display:none;">
+      <div class="modal-titulo">📣 Novo Aviso</div>
+      <p style="font-size:13px;color:rgba(245,240,232,0.6);line-height:1.6;margin-bottom:1.25rem;">
+        A planilha de avisos vai abrir em uma nova aba.<br>
+        Adicione uma nova linha com o texto do aviso e coloque <strong style="color:var(--dourado)">sim</strong> na coluna <strong style="color:var(--dourado)">ativo</strong>.<br><br>
+        Depois volte aqui e clique em <strong style="color:var(--dourado)">Atualizar</strong> para ver o aviso no mural.
+      </p>
+      <div class="modal-btns">
+        <button class="btn-modal-cancel" onclick="fecharModal()">Fechar</button>
+        <a class="btn-modal-confirm"
+           href="https://docs.google.com/spreadsheets/d/1C4BekWGg4Gd01eAIIUexQ2QUxJRMIRtpYYJXcfADH_4/edit?gid=1646647707#gid=1646647707"
+           target="_blank"
+           onclick="fecharModal()">
+          Abrir Planilha
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- PORTAL -->
 <div id="portal">
   <div class="portal-header">
@@ -362,175 +843,350 @@
     <span class="access-badge">✓ Acesso autorizado</span>
   </div>
 
-  <div class="tabs-nav">
-    <button class="tab-btn active"  onclick="openTab(event,'fluidos')">Mecânica dos Fluidos</button>
-    <button class="tab-btn" onclick="openTab(event,'direito')">Direito Penal Militar</button>
-    <button class="tab-btn" onclick="openTab(event,'estatistica')">Estatística</button>
-    <button class="tab-btn" onclick="openTab(event,'fisica')">Física 3</button>
-    <button class="tab-btn" onclick="openTab(event,'ensino')">Téc. Prática de Ensino</button>
-    <button class="tab-btn" onclick="openTab(event,'estruturais')">Sistemas Estruturais</button>
-  </div>
-
-  <!-- Mecânica dos Fluidos -->
-  <div class="tab-panel active" id="fluidos">
-    <div class="section-label">Mecânica dos Fluidos</div>
-    <div class="files-list">
-      <div class="file-card">
-        <div class="file-type-badge">📄</div>
-        <div class="file-info">
-          <span class="file-name">Fluidos_01_modelo</span>
-          <span class="file-meta">Modelo</span>
-        </div>
-        <a class="btn-download" href="https://drive.google.com/uc?export=download&id=1cT1U-IJI0gSXpJc7_ejdEYZ82lHqzg0d" target="_blank">Baixar</a>
+  <!-- ASPIRANTÔMETRO -->
+  <div class="aspirantometro">
+    <div class="aspirantometro-info">
+      <div class="aspirantometro-title">🎖️ Aspirantômetro</div>
+      <div class="aspirantometro-date">Formatura · 02 de julho de 2027</div>
+    </div>
+    <div class="countdown-blocks">
+      <div class="countdown-block">
+        <span class="num" id="cd-dias">--</span>
+        <span class="lbl">Dias</span>
+      </div>
+      <div class="countdown-block">
+        <span class="num" id="cd-horas">--</span>
+        <span class="lbl">Horas</span>
+      </div>
+      <div class="countdown-block">
+        <span class="num" id="cd-min">--</span>
+        <span class="lbl">Min</span>
+      </div>
+      <div class="countdown-block">
+        <span class="num" id="cd-seg">--</span>
+        <span class="lbl">Seg</span>
       </div>
     </div>
   </div>
 
-  <!-- Direito Penal Militar -->
-  <div class="tab-panel" id="direito">
-    <div class="section-label">Direito Penal Militar</div>
-    <div class="files-list">
-      <div class="file-card">
-        <div class="file-type-badge">📄</div>
-        <div class="file-info">
-          <span class="file-name">Analise_Juridica_Pena_Militar</span>
-          <span class="file-meta">Documento</span>
-        </div>
-        <a class="btn-download" href="https://drive.google.com/uc?export=download&id=1NxN7LyFuAq_keo_BYQ-nPLJ--4SfyGRQ" target="_blank">Baixar</a>
-      </div>
+  <!-- QUADRO DE TRABALHO -->
+  <div class="quadro-card">
+    <div class="quadro-info">
+      <div class="quadro-titulo">📋 Quadro de Trabalho</div>
+      <div class="quadro-nome" id="quadro-nome">Carregando...</div>
+    </div>
+    <span id="quadro-btn-wrap"></span>
+  </div>
+
+  <!-- MURAL DE AVISOS -->
+  <div class="mural-card">
+    <div class="mural-header">
+      <div class="mural-titulo">📣 Mural de Avisos</div>
+      <button class="btn-novo-aviso" onclick="abrirModal()">+ Novo aviso</button>
+    </div>
+    <div class="avisos-lista" id="avisos-lista">
+      <div class="avisos-vazio">Carregando avisos...</div>
     </div>
   </div>
 
-  <!-- Estatística -->
-  <div class="tab-panel" id="estatistica">
-    <div class="section-label">Estatística</div>
-    <div class="files-list">
-      <div class="file-card">
-        <div class="file-type-badge">📚</div>
-        <div class="file-info">
-          <span class="file-name">Estatística Aplicada — Larson & Farber (6ª ed.)</span>
-          <span class="file-meta">Livro</span>
-        </div>
-        <a class="btn-download" href="https://drive.google.com/uc?export=download&id=1afASLqI8dwtkTpIk58bfgHBwI1j8SQrP" target="_blank">Baixar</a>
-      </div>
-      <div class="file-card">
-        <div class="file-type-badge">📝</div>
-        <div class="file-info">
-          <span class="file-name">Questões de Estatística</span>
-          <span class="file-meta">Arquivo .txt</span>
-        </div>
-        <a class="btn-download" href="https://drive.google.com/uc?export=download&id=1sJTc9T8E0okYVGUx4cogpuYU_qL29ubp" target="_blank">Baixar</a>
-      </div>
-      <div class="file-card">
-        <div class="file-type-badge">📄</div>
-        <div class="file-info">
-          <span class="file-name">Resolução Estatística — Cap. 2</span>
-          <span class="file-meta">Resolução</span>
-        </div>
-        <a class="btn-download" href="https://drive.google.com/uc?export=download&id=1YlOgkpJgYQV5PC1WbvpAdS7iWDZH1XYe" target="_blank">Baixar</a>
-      </div>
-      <div class="file-card">
-        <div class="file-type-badge">📄</div>
-        <div class="file-info">
-          <span class="file-name">Resolução Estatística Completa v2</span>
-          <span class="file-meta">Resolução</span>
-        </div>
-        <a class="btn-download" href="https://drive.google.com/uc?export=download&id=1h4-ecEPfeu-5-9ATcpFqOQ5EPg7xeI0-" target="_blank">Baixar</a>
-      </div>
+  <!-- ANIVERSARIANTES -->
+  <div class="aniversariantes-card">
+    <div class="aniversariantes-header">
+      <div class="aniversariantes-titulo">🎂 Aniversariantes</div>
+      <div class="aniversariantes-mes" id="aniv-mes"></div>
+    </div>
+    <div class="aniversariantes-lista" id="aniversariantes-lista">
+      <div class="aniversariantes-vazio">Carregando...</div>
     </div>
   </div>
 
-  <!-- Física 3 -->
-  <div class="tab-panel" id="fisica">
-    <div class="section-label">Física 3</div>
-    <div class="files-list">
-      <div class="file-card">
-        <div class="file-type-badge">📄</div>
-        <div class="file-info">
-          <span class="file-name">Física III — Fluxo, Gauss, Capacitores, Dielétricos, Energia</span>
-          <span class="file-meta">Material de estudo</span>
-        </div>
-        <a class="btn-download" href="https://drive.google.com/uc?export=download&id=1tkjXP8ViZdPwPNbUUZptHExd-8dkZyfV" target="_blank">Baixar</a>
-      </div>
-      <div class="file-card">
-        <div class="file-type-badge">📄</div>
-        <div class="file-info">
-          <span class="file-name">Material de Estudo — Física III</span>
-          <span class="file-meta">Material de estudo</span>
-        </div>
-        <a class="btn-download" href="https://drive.google.com/uc?export=download&id=1vw9Os-opIC5TnlcxX_wadjqy4yq7siNS" target="_blank">Baixar</a>
-      </div>
-    </div>
-  </div>
+  <div class="tabs-nav" id="tabs-nav"></div>
 
-  <!-- Téc. Prática de Ensino -->
-  <div class="tab-panel" id="ensino">
-    <div class="section-label">Téc. Prática de Ensino</div>
-    <div class="files-list">
-      <div class="file-card">
-        <div class="file-type-badge">📝</div>
-        <div class="file-info">
-          <span class="file-name">Instruções — Plano de Aula</span>
-          <span class="file-meta">Arquivo .txt</span>
-        </div>
-        <a class="btn-download" href="https://drive.google.com/uc?export=download&id=1d5-a7hSh0l_NSDZ9Ezvn_o6vNAXmZoF9" target="_blank">Baixar</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Sistemas Estruturais -->
-  <div class="tab-panel" id="estruturais">
-    <div class="section-label">Sistemas Estruturais</div>
-    <div class="files-list">
-      <div class="file-card">
-        <div class="file-type-badge">📝</div>
-        <div class="file-info">
-          <span class="file-name">Atividades</span>
-          <span class="file-meta">Arquivo .txt</span>
-        </div>
-        <a class="btn-download" href="https://drive.google.com/uc?export=download&id=1-lkq17iJEIUcednv6gBG7jYQkF3an5OH" target="_blank">Baixar</a>
-      </div>
-      <div class="file-card">
-        <div class="file-type-badge">📄</div>
-        <div class="file-info">
-          <span class="file-name">Modelo — Ata de Aula 15/04/2026</span>
-          <span class="file-meta">.docx</span>
-        </div>
-        <a class="btn-download" href="https://drive.google.com/uc?export=download&id=1ObrGltky2a5h1QDHERnMz_Qleg5DgpJx" target="_blank">Baixar</a>
-      </div>
-      <div class="file-card">
-        <div class="file-type-badge">📄</div>
-        <div class="file-info">
-          <span class="file-name">Modelo — Ata de Aula 24/03/2026</span>
-          <span class="file-meta">.docx</span>
-        </div>
-        <a class="btn-download" href="https://drive.google.com/uc?export=download&id=1mCQTFnI4RcoyjUUJMf8c688rm04fDg-S" target="_blank">Baixar</a>
-      </div>
-      <div class="file-card">
-        <div class="file-type-badge">📄</div>
-        <div class="file-info">
-          <span class="file-name">Modelo — Simulado NT02/NT04</span>
-          <span class="file-meta">Simulado</span>
-        </div>
-        <a class="btn-download" href="https://drive.google.com/uc?export=download&id=1kSiaQV3gthGRy81uqNq8khZzwgV35Dvy" target="_blank">Baixar</a>
-      </div>
-      <div class="file-card">
-        <div class="file-type-badge">📄</div>
-        <div class="file-info">
-          <span class="file-name">Estudo Dirigido NT08 CBMPB</span>
-          <span class="file-meta">Estudo Dirigido</span>
-        </div>
-        <a class="btn-download" href="https://drive.google.com/uc?export=download&id=1ZBKVfWrW82WXmCDIyXCqhGonCfO72vAQ" target="_blank">Baixar</a>
-      </div>
+  <div id="tabs-content">
+    <div class="loading-state">
+      <div class="loading-spinner"></div>
+      <p>Carregando materiais...</p>
     </div>
   </div>
 
   <div class="portal-footer">
-    Atualizado por Cad Caldas &nbsp;·&nbsp; Aspirantes 2027 — CFO/PB &nbsp;·&nbsp; Mai 2026
+    <span class="footer-text">Atualizado por Cad Caldas &nbsp;·&nbsp; Aspirantes 2027 — CFO/PB &nbsp;·&nbsp; Mai 2026</span>
+    <button class="btn-refresh" id="btn-refresh" onclick="recarregarTudo()">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline;vertical-align:middle;margin-right:4px">
+        <path d="M23 4v6h-6M1 20v-6h6"/>
+        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+      </svg>
+      Atualizar
+    </button>
   </div>
 </div>
 
 <script>
+  // ── CONFIG ───────────────────────────────────────────────
+  const MATERIAIS_CSV   = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRmEhxiInOA2zt19dg_CNAG1mFVc82EgYnhj6zmlzt-u7p1OREpB_2819k7NyD0A7Lb-_nL7V4gbwyL/pub?gid=0&single=true&output=csv';
+  const AVISOS_CSV      = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRmEhxiInOA2zt19dg_CNAG1mFVc82EgYnhj6zmlzt-u7p1OREpB_2819k7NyD0A7Lb-_nL7V4gbwyL/pub?gid=1646647707&single=true&output=csv';
+  const ANIVERSARIO_CSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRmEhxiInOA2zt19dg_CNAG1mFVc82EgYnhj6zmlzt-u7p1OREpB_2819k7NyD0A7Lb-_nL7V4gbwyL/pub?gid=384779462&single=true&output=csv';
+  const QUADRO_CSV      = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRmEhxiInOA2zt19dg_CNAG1mFVc82EgYnhj6zmlzt-u7p1OREpB_2819k7NyD0A7Lb-_nL7V4gbwyL/pub?gid=1405606780&single=true&output=csv';
+  const SENHA_AVISO     = 'novidadenova';
+
+  const TABS_CONFIG = [
+    { id: 'fluidos',      label: 'Mecânica dos Fluidos'   },
+    { id: 'direito',      label: 'Direito Penal Militar'  },
+    { id: 'estatistica',  label: 'Estatística'            },
+    { id: 'fisica',       label: 'Física 3'               },
+    { id: 'ensino',       label: 'Téc. Prática de Ensino' },
+    { id: 'estruturais',  label: 'Sistemas Estruturais'   },
+  ];
+
+  const MESES = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+
+  // ── ASPIRANTÔMETRO ───────────────────────────────────────
+  const FORMATURA = new Date('2027-07-02T10:00:00');
+
+  function updateCountdown() {
+    const diff = FORMATURA - new Date();
+    if (diff <= 0) {
+      ['cd-dias','cd-horas','cd-min','cd-seg'].forEach(id => document.getElementById(id).textContent = '00');
+      return;
+    }
+    const dias  = Math.floor(diff / 86400000);
+    const horas = Math.floor((diff % 86400000) / 3600000);
+    const min   = Math.floor((diff % 3600000) / 60000);
+    const seg   = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-dias').textContent  = String(dias).padStart(2,'0');
+    document.getElementById('cd-horas').textContent = String(horas).padStart(2,'0');
+    document.getElementById('cd-min').textContent   = String(min).padStart(2,'0');
+    document.getElementById('cd-seg').textContent   = String(seg).padStart(2,'0');
+  }
+
+  // ── MODAL QUADRO ─────────────────────────────────────────
+  function abrirQuadro(link) {
+    document.getElementById('quadro-iframe').src = link;
+    document.getElementById('modal-quadro').classList.add('open');
+  }
+
+  function fecharQuadro() {
+    document.getElementById('modal-quadro').classList.remove('open');
+    document.getElementById('quadro-iframe').src = '';
+  }
+
+  // ── MODAL AVISOS ─────────────────────────────────────────
+  function abrirModal() {
+    document.getElementById('modal-aviso').classList.add('open');
+    document.getElementById('modal-step-1').style.display = 'block';
+    document.getElementById('modal-step-2').style.display = 'none';
+    document.getElementById('modal-pw').value = '';
+    document.getElementById('modal-pw-err').textContent = '';
+    setTimeout(() => document.getElementById('modal-pw').focus(), 100);
+  }
+
+  function fecharModal() { document.getElementById('modal-aviso').classList.remove('open'); }
+
+  function verificarSenhaAviso() {
+    const val = document.getElementById('modal-pw').value;
+    if (val === SENHA_AVISO) {
+      document.getElementById('modal-step-1').style.display = 'none';
+      document.getElementById('modal-step-2').style.display = 'block';
+    } else {
+      document.getElementById('modal-pw-err').textContent = 'Senha incorreta.';
+      document.getElementById('modal-pw').value = '';
+      document.getElementById('modal-pw').focus();
+    }
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { fecharModal(); fecharQuadro(); }
+  });
+  document.getElementById('modal-pw').addEventListener('keydown', e => {
+    if (e.key === 'Enter') verificarSenhaAviso();
+  });
+
+  // ── PARSER CSV ───────────────────────────────────────────
+  function parseCSV(text) {
+    const lines = text.trim().split('\n');
+    const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, ''));
+    return lines.slice(1).map(line => {
+      const cols = [];
+      let cur = '', inQ = false;
+      for (let i = 0; i < line.length; i++) {
+        if (line[i] === '"') { inQ = !inQ; continue; }
+        if (line[i] === ',' && !inQ) { cols.push(cur.trim()); cur = ''; continue; }
+        cur += line[i];
+      }
+      cols.push(cur.trim());
+      const obj = {};
+      headers.forEach((h, i) => obj[h] = (cols[i] || '').replace(/^"|"$/g, '').trim());
+      return obj;
+    });
+  }
+
+  // ── QUADRO ───────────────────────────────────────────────
+  async function loadQuadro() {
+    try {
+      const res = await fetch(QUADRO_CSV + '&t=' + Date.now());
+      if (!res.ok) throw new Error();
+      const rows = parseCSV(await res.text()).filter(r => r.nome && r.link);
+      const nomeEl  = document.getElementById('quadro-nome');
+      const btnWrap = document.getElementById('quadro-btn-wrap');
+      if (rows.length === 0) {
+        nomeEl.textContent = 'Nenhum quadro disponível no momento.';
+        btnWrap.innerHTML  = '';
+      } else {
+        const ultimo = rows[rows.length - 1];
+        nomeEl.textContent = ultimo.nome;
+        btnWrap.innerHTML  = `<button class="btn-ver-quadro" onclick="abrirQuadro('${ultimo.link}')">Ver Quadro</button>`;
+      }
+    } catch {
+      document.getElementById('quadro-nome').textContent = 'Não foi possível carregar.';
+    }
+  }
+
+  // ── AVISOS ───────────────────────────────────────────────
+  async function loadAvisos() {
+    try {
+      const res = await fetch(AVISOS_CSV + '&t=' + Date.now());
+      if (!res.ok) throw new Error();
+      const rows = parseCSV(await res.text()).filter(r => r.aviso && (r.ativo || '').toLowerCase() === 'sim');
+      const lista = document.getElementById('avisos-lista');
+      lista.innerHTML = rows.length === 0
+        ? '<div class="avisos-vazio">Nenhum aviso no momento.</div>'
+        : rows.map(r => `<div class="aviso-item">📌 ${r.aviso}</div>`).join('');
+    } catch {
+      document.getElementById('avisos-lista').innerHTML = '<div class="avisos-vazio">Não foi possível carregar os avisos.</div>';
+    }
+  }
+
+  // ── ANIVERSARIANTES ──────────────────────────────────────
+  async function loadAniversariantes() {
+    const agora    = new Date();
+    const mesAtual = agora.getMonth() + 1;
+    const diaAtual = agora.getDate();
+    document.getElementById('aniv-mes').textContent = MESES[agora.getMonth()];
+    try {
+      const res = await fetch(ANIVERSARIO_CSV + '&t=' + Date.now());
+      if (!res.ok) throw new Error();
+      const rows = parseCSV(await res.text()).filter(r => r.nome && r.data);
+      const doMes = rows.filter(r => parseInt(r.data.split('/')[1]) === mesAtual)
+                        .sort((a, b) => parseInt(a.data.split('/')[0]) - parseInt(b.data.split('/')[0]));
+      const lista = document.getElementById('aniversariantes-lista');
+      lista.innerHTML = doMes.length === 0
+        ? '<div class="aniversariantes-vazio">Nenhum aniversariante este mês.</div>'
+        : doMes.map(r => {
+            const dia    = parseInt(r.data.split('/')[0]);
+            const ehHoje = dia === diaAtual;
+            return `<div class="aniversariante-item ${ehHoje ? 'hoje' : ''}">
+              <span class="aniv-dia">${String(dia).padStart(2,'0')}</span>
+              <span class="aniv-nome">${r.nome}${ehHoje ? ' 🎂' : ''}</span>
+            </div>`;
+          }).join('');
+    } catch {
+      document.getElementById('aniversariantes-lista').innerHTML = '<div class="aniversariantes-vazio">Não foi possível carregar.</div>';
+    }
+  }
+
+  // ── ÍCONE POR TIPO ───────────────────────────────────────
+  function getIcon(tipo) {
+    const t = (tipo || '').toLowerCase();
+    if (t.includes('livro'))                             return '📚';
+    if (t.includes('planilha') || t.includes('sheets')) return '📊';
+    if (t.includes('txt'))                               return '📝';
+    if (t.includes('docx'))                              return '📄';
+    if (t.includes('simulad'))                           return '📋';
+    if (t.includes('estudo'))                            return '📖';
+    if (t.includes('ppt') || t.includes('apresent'))    return '📊';
+    return '📄';
+  }
+
+  // ── RENDER PORTAL ────────────────────────────────────────
+  function renderPortal(rows) {
+    const nav     = document.getElementById('tabs-nav');
+    const content = document.getElementById('tabs-content');
+    nav.innerHTML = '';
+    content.innerHTML = '';
+
+    const groups = {};
+    TABS_CONFIG.forEach(t => groups[t.id] = []);
+    rows.forEach(r => {
+      const key = r.materia.trim().toLowerCase();
+      if (!groups[key]) groups[key] = [];
+      groups[key].push(r);
+    });
+
+    let firstActive = true;
+
+    TABS_CONFIG.forEach(tab => {
+      const items = groups[tab.id] || [];
+      const btn = document.createElement('button');
+      btn.className = 'tab-btn' + (firstActive ? ' active' : '');
+      btn.setAttribute('data-tab', tab.id);
+      btn.innerHTML = `${tab.label}<span class="tab-count">${items.length}</span>`;
+      btn.onclick = (e) => openTab(e, tab.id);
+      nav.appendChild(btn);
+
+      const panel = document.createElement('div');
+      panel.className = 'tab-panel' + (firstActive ? ' active' : '');
+      panel.id = tab.id;
+
+      const lbl = document.createElement('div');
+      lbl.className = 'section-label';
+      lbl.textContent = tab.label;
+      panel.appendChild(lbl);
+
+      if (items.length === 0) {
+        const empty = document.createElement('div');
+        empty.className = 'empty-state';
+        empty.textContent = 'Nenhum material disponível ainda.';
+        panel.appendChild(empty);
+      } else {
+        const list = document.createElement('div');
+        list.className = 'files-list';
+        items.forEach(item => {
+          const t = (item.tipo || '').toLowerCase();
+          const isDirectLink = t.includes('sheets') || t.includes('planilha') || t.includes('ppt') || t.includes('apresent');
+          const href = isDirectLink ? item.id : `https://drive.google.com/uc?export=download&id=${item.id}`;
+          const card = document.createElement('div');
+          card.className = 'file-card';
+          card.innerHTML = `
+            <div class="file-type-badge">${getIcon(item.tipo)}</div>
+            <div class="file-info">
+              <span class="file-name">${item.nome}</span>
+              <span class="file-meta">${item.tipo || ''}</span>
+            </div>
+            <a class="btn-download" href="${href}" target="_blank">${isDirectLink ? 'Abrir' : 'Baixar'}</a>
+          `;
+          list.appendChild(card);
+        });
+        panel.appendChild(list);
+      }
+      content.appendChild(panel);
+      firstActive = false;
+    });
+  }
+
+  // ── FETCH MATERIAIS ──────────────────────────────────────
+  async function loadFromSheets() {
+    try {
+      const res = await fetch(MATERIAIS_CSV + '&t=' + Date.now());
+      if (!res.ok) throw new Error();
+      renderPortal(parseCSV(await res.text()).filter(r => r.materia && r.nome && r.id));
+    } catch {
+      document.getElementById('tabs-content').innerHTML = `
+        <div class="error-state">
+          ⚠️ Não foi possível carregar os materiais.<br>
+          <small style="opacity:0.6;font-size:11px;">Verifique sua conexão ou tente novamente.</small>
+        </div>`;
+      document.getElementById('tabs-nav').innerHTML = '';
+    }
+  }
+
+  async function recarregarTudo() {
+    const btn = document.getElementById('btn-refresh');
+    btn.classList.add('spinning');
+    await Promise.all([loadFromSheets(), loadAvisos(), loadAniversariantes(), loadQuadro()]);
+    btn.classList.remove('spinning');
+  }
+
+  // ── LOGIN ─────────────────────────────────────────────────
   function checkPassword() {
     var input = document.getElementById('pw-input').value;
     if (input === 'fenamissao') {
@@ -538,6 +1194,12 @@
       var portal = document.getElementById('portal');
       portal.style.display = 'block';
       portal.classList.add('visible');
+      loadFromSheets();
+      loadAvisos();
+      loadAniversariantes();
+      loadQuadro();
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
     } else {
       document.getElementById('err-msg').textContent = 'Senha incorreta. Tente novamente.';
       document.getElementById('pw-input').value = '';
@@ -545,7 +1207,7 @@
     }
   }
 
-  document.getElementById('pw-input').addEventListener('keydown', function(e) {
+  document.getElementById('pw-input').addEventListener('keydown', e => {
     if (e.key === 'Enter') checkPassword();
   });
 
