@@ -490,6 +490,26 @@
 
   .aniversariante-item.hoje { border-color: var(--dourado); background: rgba(201,168,76,0.15); }
   .aniversariante-item.hoje .aniv-nome { color: var(--dourado); font-weight: 500; }
+  .aniversariante-item.proximo { border-color: rgba(201,168,76,0.15); opacity: 0.6; }
+  .aniversariante-item.proximo .aniv-dia { color: rgba(245,240,232,0.4); }
+  .aniv-mes-tag {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.25);
+    background: rgba(255,255,255,0.05);
+    border-radius: 4px;
+    padding: 2px 6px;
+    margin-left: 4px;
+  }
+  .aniversariantes-divisor {
+    width: 100%;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.2);
+    padding: 4px 0 2px;
+  }
 
   .aniv-dia {
     font-family: 'Bebas Neue', sans-serif;
@@ -616,6 +636,59 @@
     min-height: 16px;
   }
 
+  /* ── LINKS RÁPIDOS ── */
+  .links-card {
+    background: rgba(250,250,248,0.04);
+    border: 0.5px solid rgba(201,168,76,0.2);
+    border-radius: 12px;
+    padding: 1.1rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .links-titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: var(--dourado);
+    text-transform: uppercase;
+    margin-bottom: 0.9rem;
+  }
+
+  .links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 8px;
+  }
+
+  .link-item {
+    background: rgba(201,168,76,0.06);
+    border: 0.5px solid rgba(201,168,76,0.15);
+    border-radius: 8px;
+    padding: 10px 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .link-item:hover {
+    border-color: rgba(201,168,76,0.4);
+    background: rgba(201,168,76,0.1);
+  }
+
+  .link-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .link-nome {
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(245,240,232,0.75);
+    line-height: 1.3;
+  }
+
   /* ── ABAS ── */
   .tabs-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.5rem; }
 
@@ -693,6 +766,21 @@
   .file-info { flex: 1; }
   .file-info .file-name { font-size: 14px; font-weight: 500; color: var(--creme); display: block; margin-bottom: 2px; }
   .file-info .file-meta { font-size: 11px; color: rgba(245,240,232,0.35); }
+
+  .badge-novo {
+    display: inline-block;
+    background: rgba(126,200,154,0.15);
+    border: 0.5px solid rgba(126,200,154,0.4);
+    color: #7ec89a;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 10px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
 
   .btn-download {
     background: transparent;
@@ -852,8 +940,8 @@
       <img src="logo.png" alt="Aspirantes 2027" />
     </div>
     <div class="portal-header-text">
-      <h2>Turma Aspirantes 2027</h2>
-      <p>Portal de Materiais — CFO Paraíba</p>
+      <h2>Aspirantes 2027</h2>
+      <p>Fortuna audaces sequitur</p>
     </div>
     <span class="access-badge">✓ Acesso autorizado</span>
   </div>
@@ -915,6 +1003,41 @@
     </div>
   </div>
 
+  <!-- LINKS RÁPIDOS -->
+  <div class="links-card">
+    <div class="links-titulo">🔗 Links Rápidos</div>
+    <div class="links-grid">
+      <a class="link-item" href="https://bravo.bombeiros.pb.gov.br/bravoEscalas/acessoUsuario/" target="_blank">
+        <span class="link-icon">📅</span>
+        <span class="link-nome">Bravo Escalas</span>
+      </a>
+      <a class="link-item" href="https://bravo.bombeiros.pb.gov.br/bravoRH/boletins/" target="_blank">
+        <span class="link-icon">📋</span>
+        <span class="link-nome">Boletim Interno</span>
+      </a>
+      <a class="link-item" href="https://pbdoc.pb.gov.br/siga/public/app/login?cont=https%3A%2F%2Fpbdoc.pb.gov.br%2Fsiga%2Fapp%2Fprincipal" target="_blank">
+        <span class="link-icon">📄</span>
+        <span class="link-nome">PB Doc</span>
+      </a>
+      <a class="link-item" href="https://docs.google.com/spreadsheets/d/10qgkvLfy_DWidllpqe6Tf62dn2u1hb_QI3Dw7TSXwKY/edit?gid=0#gid=0" target="_blank">
+        <span class="link-icon">📊</span>
+        <span class="link-nome">Controle de Serviços</span>
+      </a>
+      <a class="link-item" href="https://ead.bombeiros.pb.gov.br/" target="_blank">
+        <span class="link-icon">🎓</span>
+        <span class="link-nome">Moodle</span>
+      </a>
+      <a class="link-item" href="https://bravo.bombeiros.pb.gov.br/portal/normas-tecnicas/" target="_blank">
+        <span class="link-icon">📖</span>
+        <span class="link-nome">Normas Técnicas</span>
+      </a>
+      <a class="link-item" href="https://ce.pm.pb.gov.br/sisge/?m=sp&c=login" target="_blank">
+        <span class="link-icon">📰</span>
+        <span class="link-nome">Sistema de Notas</span>
+      </a>
+    </div>
+  </div>
+
   <div class="tabs-nav" id="tabs-nav"></div>
 
   <div id="tabs-content">
@@ -925,7 +1048,7 @@
   </div>
 
   <div class="portal-footer">
-    <span class="footer-text">Atualizado por Cad Caldas &nbsp;·&nbsp; Aspirantes 2027 — CFO/PB &nbsp;·&nbsp; Mai 2026</span>
+    <span class="footer-text">Atualizado por Cad Caldas &nbsp;·&nbsp; Aspirantes 2027 — CFO/PB &nbsp;·&nbsp; Mai 2026 &nbsp;·&nbsp; v0.1</span>
     <button class="btn-refresh" id="btn-refresh" onclick="recarregarTudo()">
       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline;vertical-align:middle;margin-right:4px">
         <path d="M23 4v6h-6M1 20v-6h6"/>
@@ -1097,30 +1220,76 @@
 
   // ── ANIVERSARIANTES ──────────────────────────────────────
   async function loadAniversariantes() {
-    const agora    = new Date();
-    const mesAtual = agora.getMonth() + 1;
-    const diaAtual = agora.getDate();
+    const agora      = new Date();
+    const mesAtual   = agora.getMonth() + 1;
+    const diaAtual   = agora.getDate();
+    const proxMes    = mesAtual === 12 ? 1 : mesAtual + 1;
+    const mostrarProx = diaAtual <= 7;
+
     document.getElementById('aniv-mes').textContent = MESES[agora.getMonth()];
+
     try {
       const res = await fetch(ANIVERSARIO_CSV + '&t=' + Date.now());
       if (!res.ok) throw new Error();
       const rows = parseCSV(await res.text()).filter(r => r.nome && r.data);
+
       const doMes = rows.filter(r => parseInt(r.data.split('/')[1]) === mesAtual)
                         .sort((a, b) => parseInt(a.data.split('/')[0]) - parseInt(b.data.split('/')[0]));
+
+      const doProxMes = mostrarProx
+        ? rows.filter(r => parseInt(r.data.split('/')[1]) === proxMes)
+              .sort((a, b) => parseInt(a.data.split('/')[0]) - parseInt(b.data.split('/')[0]))
+        : [];
+
       const lista = document.getElementById('aniversariantes-lista');
-      lista.innerHTML = doMes.length === 0
-        ? '<div class="aniversariantes-vazio">Nenhum aniversariante este mês.</div>'
-        : doMes.map(r => {
-            const dia    = parseInt(r.data.split('/')[0]);
-            const ehHoje = dia === diaAtual;
-            return `<div class="aniversariante-item ${ehHoje ? 'hoje' : ''}">
+
+      let html = '';
+
+      if (doMes.length === 0 && doProxMes.length === 0) {
+        html = '<div class="aniversariantes-vazio">Nenhum aniversariante este mês.</div>';
+      } else {
+        html += doMes.map(r => {
+          const dia    = parseInt(r.data.split('/')[0]);
+          const ehHoje = dia === diaAtual;
+          return `<div class="aniversariante-item ${ehHoje ? 'hoje' : ''}">
+            <span class="aniv-dia">${String(dia).padStart(2,'0')}</span>
+            <span class="aniv-nome">${r.nome}${ehHoje ? ' 🎂' : ''}</span>
+          </div>`;
+        }).join('');
+
+        if (doMes.length === 0) {
+          html += '<div class="aniversariantes-vazio" style="text-align:left;padding:4px 0;">Nenhum aniversariante este mês.</div>';
+        }
+
+        if (doProxMes.length > 0) {
+          html += `<div class="aniversariantes-divisor">▸ ${MESES[proxMes - 1]}</div>`;
+          html += doProxMes.map(r => {
+            const dia = parseInt(r.data.split('/')[0]);
+            return `<div class="aniversariante-item proximo">
               <span class="aniv-dia">${String(dia).padStart(2,'0')}</span>
-              <span class="aniv-nome">${r.nome}${ehHoje ? ' 🎂' : ''}</span>
+              <span class="aniv-nome">${r.nome} <span class="aniv-mes-tag">${MESES[proxMes-1].substring(0,3)}</span></span>
             </div>`;
           }).join('');
+        }
+      }
+
+      lista.innerHTML = html;
     } catch {
       document.getElementById('aniversariantes-lista').innerHTML = '<div class="aniversariantes-vazio">Não foi possível carregar.</div>';
     }
+  }
+
+  // ── BADGE NOVO ──────────────────────────────────────────
+  function isNovo(dataStr) {
+    if (!dataStr) return false;
+    try {
+      const partes = dataStr.trim().split(' ');
+      const [dia, mes, ano] = partes[0].split('/');
+      const [hora, min] = (partes[1] || '00:00').split(':');
+      const data = new Date(ano, mes - 1, dia, hora, min);
+      const diffDias = (new Date() - data) / 86400000;
+      return diffDias <= 3;
+    } catch { return false; }
   }
 
   // ── ÍCONE POR TIPO ───────────────────────────────────────
@@ -1183,12 +1352,13 @@
           const t = (item.tipo || '').toLowerCase();
           const isDirectLink = t.includes('sheets') || t.includes('planilha') || t.includes('ppt') || t.includes('apresent');
           const href = isDirectLink ? item.id : `https://drive.google.com/uc?export=download&id=${item.id}`;
+          const novo = isNovo(item.data);
           const card = document.createElement('div');
           card.className = 'file-card';
           card.innerHTML = `
             <div class="file-type-badge">${getIcon(item.tipo)}</div>
             <div class="file-info">
-              <span class="file-name">${item.nome}</span>
+              <span class="file-name">${item.nome}${novo ? '<span class="badge-novo">Novo</span>' : ''}</span>
               <span class="file-meta">${item.tipo || ''}</span>
             </div>
             <a class="btn-download" href="${href}" target="_blank">${isDirectLink ? 'Abrir' : 'Baixar'}</a>
