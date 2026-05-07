@@ -865,6 +865,14 @@
     .quadro-iframe-wrap { padding-bottom: 120%; }
   }
 </style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FP2GLMX7C1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FP2GLMX7C1');
+</script>
 </head>
 <body>
 
@@ -1197,6 +1205,12 @@
     } catch { return ''; }
   }
 
+  // ── LINKIFY ─────────────────────────────────────────────
+  function linkify(texto) {
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    return texto.replace(urlRegex, '<a href="$1" target="_blank" style="color:var(--dourado);text-decoration:underline;word-break:break-all;">$1</a>');
+  }
+
   // ── AVISOS ───────────────────────────────────────────────
   async function loadAvisos() {
     try {
@@ -1209,7 +1223,7 @@
         : rows.map(r => {
           const tempo = r.data ? tempoRelativo(r.data) : '';
           return `<div class="aviso-item">
-            <span class="aviso-texto">📌 ${r.aviso}</span>
+            <span class="aviso-texto">📌 ${linkify(r.aviso)}</span>
             ${tempo ? `<span class="aviso-tempo">${tempo}</span>` : ''}
           </div>`;
         }).join('');
