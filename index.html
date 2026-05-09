@@ -1407,7 +1407,7 @@
     try {
       const res = await fetch(MATERIAIS_CSV + '&t=' + Date.now());
       if (!res.ok) throw new Error();
-      renderPortal(parseCSV(await res.text()).filter(r => r.materia && r.nome && r.id && (r.ativo || '').toLowerCase() === 'sim')));
+      renderPortal(parseCSV(await res.text()).filter(r => r.materia && r.nome && r.id && (r.ativo || '').toLowerCase() === 'sim'));
     } catch {
       document.getElementById('tabs-content').innerHTML = `
         <div class="error-state">
